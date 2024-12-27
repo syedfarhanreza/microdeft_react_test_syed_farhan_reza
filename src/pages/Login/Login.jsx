@@ -1,14 +1,15 @@
 import axios from "axios";
 import { useState } from "react";
-import { Link, useNavigate } from "react-router-dom"; 
-import loginImage from "../../assets/loginImage.jpg"; 
+import { Link, useNavigate } from "react-router-dom";
+import loginImage from "../../assets/loginImage.jpg";
+
 const Login = () => {
   const [formData, setFormData] = useState({
     email: "",
     password: "",
   });
   const [error, setError] = useState("");
-  const navigate = useNavigate(); 
+  const navigate = useNavigate();
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -23,24 +24,20 @@ const Login = () => {
     try {
       const url = "https://react-interview.crd4lc.easypanel.host/api/login";
       const response = await axios.post(url, formData);
-  
+
       console.log("Server response:", response);
-  
-      if (response.data && response.data.data && response.data.data.token) {
+
+      if (response.data?.data?.token) {
         localStorage.setItem("token", response.data.data.token);
-        localStorage.setItem("user", JSON.stringify(response.data.data.user)); 
+        localStorage.setItem("user", JSON.stringify(response.data.data.user));
         navigate("/");
       } else {
         setError("Login failed: Token not found in the response.");
       }
     } catch (error) {
       console.error("Login error:", error);
-      if (
-        error.response &&
-        error.response.status >= 400 &&
-        error.response.status <= 500
-      ) {
-        setError(error.response.data.status_message || "Invalid credentials.");
+      if (error.response?.data?.status_message) {
+        setError(error.response.data.status_message);
       } else {
         setError("Something went wrong. Please try again later.");
       }
@@ -99,7 +96,7 @@ const Login = () => {
           </form>
           <div className="text-center mt-4">
             <p className="text-gray-600">
-              Don&#39;t have an account?{""}
+              Don&#39;t have an account?{" "}
               <Link to="/register" className="text-blue-500">
                 Register
               </Link>

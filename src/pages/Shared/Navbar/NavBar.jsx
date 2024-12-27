@@ -3,16 +3,17 @@ import { Link } from "react-router";
 const NavBar = () => {
   const NavOptions = (
     <>
-      <li>
-        <a>Create Course</a>
+       <li>
+        <Link to="/">All Courses</Link>
       </li>
       <li>
-        <a>All Courses</a>
+        <Link to="/create-course">Create Course</Link>
       </li>
+     
     </>
   );
   return (
-    <div className="navbar bg-base-100">
+    <div className="navbar bg-blue-300">
       <div className="navbar-start">
         <div className="dropdown">
           <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -33,15 +34,15 @@ const NavBar = () => {
           </div>
           <ul
             tabIndex={0}
-            className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow"
+            className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow font-bold"
           >
             {NavOptions}
           </ul>
         </div>
-        <a className="btn btn-ghost text-xl">MicroDeft</a>
+        <Link to="/" className="btn btn-ghost text-xl font-extrabold">MICRODEFT</Link>
       </div>
-      <div className="navbar-center hidden lg:flex">
-        <ul className="menu menu-horizontal px-1">
+      <div className="navbar-center hidden lg:flex ">
+        <ul className="menu menu-horizontal px-1 font-bold">
           {NavOptions}
         </ul>
       </div>
