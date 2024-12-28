@@ -4,7 +4,7 @@ const NavBar = () => {
   const NavOptions = (
     <>
        <li>
-        <Link to="/">All Courses</Link>
+        <Link to="/courses">All Courses</Link>
       </li>
       <li>
         <Link to="/create-course">Create Course</Link>
