@@ -10,7 +10,8 @@
 ![screencapture-timely-fudge-52f4c3-netlify-app-create-course-2024-12-28-11_12_26](https://github.com/user-attachments/assets/a9fab1c4-d6c5-4b6a-8cde-f32f8cc2254d)
 
 ## Courses
-![Courses](https://github.com/user-attachments/assets/5ad4c989-b376-4670-b5ef-16e2026fc399)
+![screencapture-timely-fudge-52f4c3-netlify-app-2024-12-28-11_18_03](https://github.com/user-attachments/assets/fa8078d2-4954-4885-965c-45b51c0586d5)
+
 
 
 
